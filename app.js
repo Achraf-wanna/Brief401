@@ -9,7 +9,7 @@ const mongoose = require('mongoose')
 var userRouter = require('./routes/user');
 
 var app = express();
-mongoose.connect( 'mongodb://localhost/brief401' ,{ useNewUrlParser: true , useUnifiedTopology: true },(err)=>{
+mongoose.connect(process.env.DATABASE_URL ,{ useNewUrlParser: true , useUnifiedTopology: true },(err)=>{
   if(err){
     console.log(err);
     return
